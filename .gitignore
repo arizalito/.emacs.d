@@ -2,3 +2,8 @@ elpa
 straight
 eln-cache
 auto-save-list
+.cache
+.local
+games
+projects
+tramp

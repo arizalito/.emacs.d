@@ -28,7 +28,9 @@
 
 ;; eglot, a light lsp client
 (straight-use-package 'eglot)
+;;(require 'eglot)
 (add-hook 'prog-mode-hook 'eglot-ensure)
+;;(add-to-list 'eglot-server-programs '((c++-mode c-mode).("clangd" "--background-index" "--header-insertion=iwyu")))
 
 ;; git tool
 (straight-use-package 'magit)
@@ -39,6 +41,9 @@
 ;; yasnippet, a template system for emacs
 (straight-use-package 'yasnippet)
 (yas-global-mode 1)
+
+;; dired-sidebar, minimal file explorer in tree style
+(straight-use-package 'dired-sidebar)
 
 (provide 'init-package)
 ;;; init-package.el ends here
