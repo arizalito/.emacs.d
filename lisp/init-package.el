@@ -45,5 +45,9 @@
 ;; dired-sidebar, minimal file explorer in tree style
 (straight-use-package 'dired-sidebar)
 
+;; add marginalia to the minibuffer completions
+(straight-use-package 'marginalia)
+(marginalia-mode)
+
 (provide 'init-package)
 ;;; init-package.el ends here
