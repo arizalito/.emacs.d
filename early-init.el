@@ -16,7 +16,10 @@
   (tool-bar-mode -1))
 (menu-bar-mode -1)
 (when (fboundp 'scroll-bar-mode)
-  (scroll-bar-mode nil))
+  (scroll-bar-mode -1))
+
+;; globally column mode
+(setq column-number-mode t)
 
 ;; window size and features
 (setq-default
