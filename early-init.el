@@ -26,5 +26,9 @@
  window-resize-pixelwise t
  frame-resize-pixelwise t)
 
+;; make C-z do nothing
+(global-unset-key (kbd "C-z"))
+(global-unset-key (kbd "C-x C-z"))
+
 (provide 'early-init)
 ;;; early-init.el ends here

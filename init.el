@@ -22,5 +22,8 @@
 
 (require 'early-init)
 (require 'init-package)
+(require 'init-org)
+(require 'init-llvm)
+(require 'init-tablegen)
 
 ;;; init.el ends here
