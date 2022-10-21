@@ -49,6 +49,10 @@
 (straight-use-package 'marginalia)
 (marginalia-mode)
 
+;; epub reader
+(straight-use-package 'nov)
+(add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
+
 (provide 'init-package)
 ;;; init-package.el ends here
 
