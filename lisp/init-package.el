@@ -53,6 +53,12 @@
 (straight-use-package 'nov)
 (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
 
+;; consult
+(straight-use-package 'consult)
+
+;; embark
+(straight-use-package 'embark)
+
 (provide 'init-package)
 ;;; init-package.el ends here
 
