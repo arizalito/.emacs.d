@@ -59,6 +59,13 @@
 ;; embark
 (straight-use-package 'embark)
 
+;; advanced ctags frontend
+(straight-use-package 'citre)
+
+;; pdf-tools
+(straight-use-package 'pdf-tools)
+(pdf-tools-install)
+
 (provide 'init-package)
 ;;; init-package.el ends here
 
