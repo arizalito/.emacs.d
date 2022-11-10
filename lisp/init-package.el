@@ -64,7 +64,10 @@
 
 ;; pdf-tools
 (straight-use-package 'pdf-tools)
-(pdf-tools-install)
+(pdf-loader-install)
+
+;; benchmark tool
+(straight-use-package 'esup)
 
 (provide 'init-package)
 ;;; init-package.el ends here
