@@ -40,7 +40,7 @@
 
 ;; yasnippet, a template system for emacs
 (straight-use-package 'yasnippet)
-(yas-global-mode 1)
+(add-hook 'prog-mode-hook 'yas-minor-mode)
 
 ;; dired-sidebar, minimal file explorer in tree style
 (straight-use-package 'dired-sidebar)
