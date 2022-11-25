@@ -56,6 +56,10 @@
 
 ;; consult
 (straight-use-package 'consult)
+;; M-s bindings (search-map)
+(keymap-global-set "M-g g" 'consult-goto-line)
+(keymap-global-set "M-g M-g" 'consult-goto-line)
+(keymap-global-set "M-s l" 'consult-line)
 
 ;; embark
 (straight-use-package 'embark)
