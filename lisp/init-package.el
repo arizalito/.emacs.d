@@ -60,6 +60,7 @@
 (keymap-global-set "M-g g" 'consult-goto-line)
 (keymap-global-set "M-g M-g" 'consult-goto-line)
 (keymap-global-set "M-s l" 'consult-line)
+(keymap-global-set "C-x b" 'consult-buffer)
 
 ;; embark
 (straight-use-package 'embark)
@@ -73,6 +74,10 @@
 
 ;; benchmark tool
 (straight-use-package 'esup)
+
+;; diminish, hide minor-modes in modeline
+(straight-use-package 'diminish)
+(diminish 'which-key-mode)
 
 (provide 'init-package)
 ;;; init-package.el ends here
