@@ -10,8 +10,12 @@
       completion-category-overrides '((file (styles basic partial-completion))))
 
 ;; vertico, minibuffer completion tool
-(straight-use-package 'vertico)
+(straight-use-package
+ '(vertico :includes vertico-directory
+	   :files (:defaults "extensions/vertico-directory.el")))
 (vertico-mode)
+(define-key vertico-map (kbd "<DEL>") #'vertico-directory-delete-word)
+(define-key vertico-map (kbd "M-<DEL>") #'vertico-directory-delete-char)
 
 ;; buffer completion tool
 (straight-use-package 'corfu)
@@ -28,9 +32,7 @@
 
 ;; eglot, a light lsp client
 (straight-use-package 'eglot)
-;;(require 'eglot)
 (add-hook 'prog-mode-hook 'eglot-ensure)
-;;(add-to-list 'eglot-server-programs '((c++-mode c-mode).("clangd" "--background-index" "--header-insertion=iwyu")))
 
 ;; git tool
 (straight-use-package 'magit)
@@ -41,9 +43,6 @@
 ;; yasnippet, a template system for emacs
 (straight-use-package 'yasnippet)
 (add-hook 'prog-mode-hook 'yas-minor-mode)
-
-;; dired-sidebar, minimal file explorer in tree style
-(straight-use-package 'dired-sidebar)
 
 ;; add marginalia to the minibuffer completions
 (straight-use-package 'marginalia)
