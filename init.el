@@ -27,5 +27,6 @@
 (require 'init-org)
 (require 'init-llvm)
 (require 'init-tablegen)
+(require 'init-shell)
 
 ;;; init.el ends here

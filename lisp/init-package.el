@@ -37,9 +37,6 @@
 ;; git tool
 (straight-use-package 'magit)
 
-;; vterm, best terminal emulator in emacs
-(straight-use-package 'vterm)
-
 ;; yasnippet, a template system for emacs
 (straight-use-package 'yasnippet)
 (add-hook 'prog-mode-hook 'yas-minor-mode)
