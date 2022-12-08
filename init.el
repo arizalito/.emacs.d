@@ -2,6 +2,7 @@
 ;;; init.el
 
 ;;; straight.el: next-generation, purely functional package manager for the Emacs hacker.
+(setq straight-check-for-modifications 'live-with-find)
 (defvar bootstrap-version)
 (let ((bootstrap-file
        (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
@@ -22,6 +23,7 @@
 
 (require 'early-init)
 (require 'init-package)
+(require 'init-rime)
 (require 'init-org)
 (require 'init-llvm)
 (require 'init-tablegen)
