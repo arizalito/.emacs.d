@@ -21,7 +21,6 @@
 
 (setq custom-file (locate-user-emacs-file "custom.el"))
 
-(require 'early-init)
 (require 'init-package)
 (require 'init-rime)
 (require 'init-org)
