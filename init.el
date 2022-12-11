@@ -24,8 +24,12 @@
 (require 'init-package)
 (require 'init-rime)
 (require 'init-org)
-(require 'init-llvm)
-(require 'init-tablegen)
 (require 'init-shell)
+
+;; put 3rd party code to site-lisp
+(add-to-list 'load-path (expand-file-name "site-lisp" user-emacs-directory))
+(mapc (lambda (name)
+        (require (intern (file-name-sans-extension name))))
+      (directory-files "~/.emacs.d/site-lisp" nil "\\.el$"))
 
 ;;; init.el ends here

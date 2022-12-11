@@ -12,3 +12,4 @@ nov-places
 custom.el
 rime
 eshell
+site-lisp/*.el
