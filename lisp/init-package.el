@@ -74,6 +74,7 @@
 ;; diminish, hide minor-modes in modeline
 (straight-use-package 'diminish)
 (diminish 'which-key-mode)
+(diminish 'eldoc-mode)
 
 (provide 'init-package)
 ;;; init-package.el ends here
