@@ -48,7 +48,10 @@
 ;; epub reader
 (straight-use-package 'nov)
 (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
-(add-hook 'nov-mode-hook (lambda () (text-scale-set 2)))
+(setq nov-text-width t)
+(add-hook 'nov-mode-hook (lambda ()
+			   (text-scale-set 2)
+			   (visual-line-mode)))
 
 ;; consult
 (straight-use-package 'consult)
