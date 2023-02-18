@@ -51,7 +51,12 @@
 (setq nov-text-width t)
 (add-hook 'nov-mode-hook (lambda ()
 			   (text-scale-set 2)
-			   (visual-line-mode)))
+			   (visual-line-mode)
+			   (keymap-unset nov-mode-map "n")
+			   (keymap-set nov-mode-map "n" 'next-line)
+			   (keymap-unset nov-mode-map "p")
+			   (keymap-set nov-mode-map "p" 'previous-line)
+			   ))
 
 ;; consult
 (straight-use-package 'consult)
