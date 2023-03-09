@@ -5,6 +5,9 @@
 (add-hook 'emacs-startup-hook (lambda ()
 				(setq gc-cons-threshold (* 16 1024 1024))))
 
+;; show messages when collecting garbage
+(setq garbage-collection-messages t)
+
 ;; prevent package.el loading packages prior to their init-file loading.
 (setq package-enable-at-startup nil)
 
