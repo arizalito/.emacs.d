@@ -40,6 +40,7 @@
 ;; yasnippet, a template system for emacs
 (straight-use-package 'yasnippet)
 (add-hook 'prog-mode-hook 'yas-minor-mode)
+(add-hook 'yas-keymap-disable-hook (lambda () (and (frame-live-p corfu--frame) (frame-visible-p corfu--frame))))
 
 ;; add marginalia to the minibuffer completions
 (straight-use-package 'marginalia)
