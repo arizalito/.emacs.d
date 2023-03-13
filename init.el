@@ -2,6 +2,7 @@
 ;;; init.el
 
 ;;; straight.el: next-generation, purely functional package manager for the Emacs hacker.
+(setq straight-repository-branch "develop")
 (setq straight-check-for-modifications 'live-with-find)
 (defvar bootstrap-version)
 (let ((bootstrap-file
