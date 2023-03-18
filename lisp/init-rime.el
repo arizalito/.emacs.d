@@ -3,6 +3,7 @@
 ;; rime in emacs
 (straight-use-package 'rime)
 (setq default-input-method "rime"
+      rime-title "R"
       rime-translate-keybindings '("C-`")
       rime-show-candidate 'posframe)
 
