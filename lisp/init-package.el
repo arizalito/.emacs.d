@@ -80,6 +80,12 @@
 ;; benchmark tool
 (straight-use-package 'esup)
 
+;; fold code block
+(add-hook 'prog-mode-hook 'hs-minor-mode)
+(add-hook 'hs-minor-mode-hook
+	  (lambda ()
+	    (diminish 'hs-minor-mode)))
+
 ;; diminish, hide minor-modes in modeline
 (straight-use-package 'diminish)
 (diminish 'which-key-mode)
