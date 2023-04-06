@@ -91,5 +91,11 @@
 (diminish 'which-key-mode)
 (diminish 'eldoc-mode)
 
+;; simple templates for emacs
+(straight-use-package 'tempel)
+(keymap-global-set "M-+" 'tempel-complete)
+(keymap-global-set "M-*" 'tempel-insert)
+(straight-use-package 'tempel-collection)
+
 (provide 'init-package)
 ;;; init-package.el ends here
