@@ -97,5 +97,8 @@
 (keymap-global-set "M-*" 'tempel-insert)
 (straight-use-package 'tempel-collection)
 
+;; markdown
+(straight-use-package 'markdown-mode)
+
 (provide 'init-package)
 ;;; init-package.el ends here
