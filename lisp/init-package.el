@@ -69,6 +69,8 @@
 
 ;; embark
 (straight-use-package 'embark)
+(keymap-global-set "C-." 'embark-act)
+(straight-use-package 'embark-consult)
 
 ;; advanced ctags frontend
 (straight-use-package 'citre)
@@ -99,6 +101,9 @@
 
 ;; markdown
 (straight-use-package 'markdown-mode)
+
+;; latex
+(straight-use-package 'auctex)
 
 (provide 'init-package)
 ;;; init-package.el ends here
