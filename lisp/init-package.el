@@ -14,8 +14,6 @@
  '(vertico :includes vertico-directory
 	   :files (:defaults "extensions/vertico-directory.el")))
 (vertico-mode)
-(define-key vertico-map (kbd "<DEL>") #'vertico-directory-delete-word)
-(define-key vertico-map (kbd "M-<DEL>") #'vertico-directory-delete-char)
 
 ;; buffer completion tool
 (straight-use-package 'corfu)
