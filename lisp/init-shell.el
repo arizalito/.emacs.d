@@ -7,5 +7,8 @@
 	  (lambda ()
 	    (set-face-attribute 'vterm-color-white   nil :foreground "#555555"   :background "#555555")))
 
+(straight-use-package 'vterm-toggle)
+(keymap-global-set "C-`" 'vterm-toggle)
+
 (provide 'init-shell)
 ;;; init-shell.el ends here
