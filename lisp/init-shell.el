@@ -10,5 +10,7 @@
 (straight-use-package 'vterm-toggle)
 (keymap-global-set "C-`" 'vterm-toggle)
 
+(straight-use-package 'multi-vterm)
+
 (provide 'init-shell)
 ;;; init-shell.el ends here
