@@ -77,9 +77,6 @@
 (straight-use-package 'pdf-tools)
 (pdf-loader-install)
 
-;; benchmark tool
-(straight-use-package 'esup)
-
 ;; fold code block
 (add-hook 'prog-mode-hook 'hs-minor-mode)
 (add-hook 'hs-minor-mode-hook
