@@ -114,5 +114,8 @@
 ;; latex
 (straight-use-package 'auctex)
 
+;; enable electirc-pair in prog-mode
+(add-hook 'prog-mode-hook 'electric-pair-mode)
+
 (provide 'init-package)
 ;;; init-package.el ends here
