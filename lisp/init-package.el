@@ -74,8 +74,22 @@
 (straight-use-package 'citre)
 
 ;; pdf-tools
-(straight-use-package 'pdf-tools)
+(straight-use-package
+ '(pdf-tools
+   :host github
+   :branch "pdf-roll"
+   :repo "dalanicolai/pdf-tools"
+   :files ("lisp/*.el"
+           "README"
+           ("build" "Makefile")
+           ("build" "server"))))
 (pdf-loader-install)
+
+(straight-use-package
+ '(image-roll
+   :host github
+   :repo "dalanicolai/image-roll.el"))
+(add-hook 'pdf-view-mode-hook 'pdf-view-roll-minor-mode)
 
 ;; fold code block
 (add-hook 'prog-mode-hook 'hs-minor-mode)

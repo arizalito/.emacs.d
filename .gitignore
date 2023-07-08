@@ -13,3 +13,5 @@ custom.el
 rime
 eshell
 site-lisp/*.el
+org-roam.db
+places
