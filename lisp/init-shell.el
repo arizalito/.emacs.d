@@ -9,6 +9,7 @@
 
 (straight-use-package 'vterm-toggle)
 (keymap-global-set "C-`" 'vterm-toggle)
+(setq vterm-toggle-hide-method 'reset-window-configration)
 
 (straight-use-package 'multi-vterm)
 
