@@ -40,7 +40,7 @@
 
 ;; set defalut font globally
 (add-to-list 'default-frame-alist
-	     '(font . "Source Code Pro-11"))
+	     '(font . "Source Code Pro-13"))
 
 (provide 'early-init)
 ;;; early-init.el ends here
