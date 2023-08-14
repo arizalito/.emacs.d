@@ -17,6 +17,11 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
+(straight-use-package 'leaf)
+(straight-use-package 'leaf-keywords)
+(leaf-keywords-init)
+(setq leaf-defaults '(:straight t))
+
 ;; make lisp directory work
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
