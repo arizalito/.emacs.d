@@ -1,8 +1,12 @@
 ;;; init-package.el
 
+;; diminish, hide minor-modes in modeline
+(straight-use-package 'diminish)
+
 ;; display available keybings in popup
 (straight-use-package 'which-key)
 (which-key-mode)
+(diminish 'which-key-mode)
 
 ;; orderless
 (straight-use-package 'orderless)
@@ -96,11 +100,6 @@
 (add-hook 'hs-minor-mode-hook
 	  (lambda ()
 	    (diminish 'hs-minor-mode)))
-
-;; diminish, hide minor-modes in modeline
-(straight-use-package 'diminish)
-(diminish 'which-key-mode)
-(diminish 'eldoc-mode)
 
 ;; simple templates for emacs
 (straight-use-package 'tempel)

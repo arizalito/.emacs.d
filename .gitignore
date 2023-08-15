@@ -15,3 +15,5 @@ eshell
 site-lisp/*.el
 org-roam.db
 places
+bookmarks
+.org-id-locations
