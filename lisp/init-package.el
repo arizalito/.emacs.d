@@ -14,9 +14,7 @@
       completion-category-overrides '((file (styles basic partial-completion))))
 
 ;; vertico, minibuffer completion tool
-(straight-use-package
- '(vertico :includes vertico-directory
-	   :files (:defaults "extensions/vertico-directory.el")))
+(straight-use-package 'vertico)
 (vertico-mode)
 
 ;; buffer completion tool
