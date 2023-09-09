@@ -14,8 +14,11 @@
       completion-category-overrides '((file (styles basic partial-completion))))
 
 ;; vertico, minibuffer completion tool
-(straight-use-package 'vertico)
+(straight-use-package
+ '(vertico :includes vertico-directory
+	   :files (:defaults "extensions/vertico-directory.el")))
 (vertico-mode)
+(keymap-set vertico-map "M-DEL" #'vertico-directory-delete-word)
 
 ;; buffer completion tool
 (straight-use-package 'corfu)
