@@ -115,7 +115,7 @@
 (straight-use-package 'auctex)
 
 ;; switch tab with Mod+num in tab-bar-mode
-(setq tab-bar-select-tab-modifiers '(meta))
+(setq tab-bar-select-tab-modifiers '(control))
 
 (provide 'init-package)
 ;;; init-package.el ends here
