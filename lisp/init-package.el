@@ -2,6 +2,8 @@
 
 ;; diminish, hide minor-modes in modeline
 (straight-use-package 'diminish)
+(add-hook 'eldoc-mode-hook (lambda () (diminish 'eldoc-mode)))
+(diminish 'abbrev-mode)
 
 ;; display available keybings in popup
 (straight-use-package 'which-key)
