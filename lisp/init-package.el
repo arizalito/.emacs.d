@@ -105,11 +105,5 @@
 ;; switch tab with Mod+num in tab-bar-mode
 (setq tab-bar-select-tab-modifiers '(control))
 
-;; leetcode in emacs, needs my_cookies
-(straight-use-package 'leetcode)
-(setq leetcode-prefer-language "cpp")
-(setq leetcode-save-solutions t)
-(setq leetcode-directory "~/leetcode")
-
 (provide 'init-package)
 ;;; init-package.el ends here
