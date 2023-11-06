@@ -80,10 +80,6 @@
 ;; advanced ctags frontend
 (straight-use-package 'citre)
 
-;; pdf-tools
-(straight-use-package 'pdf-tools)
-(pdf-loader-install)
-
 ;; fold code block
 (add-hook 'prog-mode-hook 'hs-minor-mode)
 (add-hook 'hs-minor-mode-hook
