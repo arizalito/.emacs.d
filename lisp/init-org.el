@@ -1,6 +1,7 @@
 ;;; org-mode
 
 (straight-use-package 'org-mode)
+(add-hook 'org-mode-hook 'visual-line-mode)
 (keymap-global-set "C-c a" #'org-agenda)
 (keymap-global-set "C-c c" #'org-capture)
 (if (file-directory-p "~/org/agenda")
