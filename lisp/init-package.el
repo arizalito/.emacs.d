@@ -98,6 +98,7 @@
 ;; latex
 (straight-use-package 'auctex)
 (straight-use-package 'cdlatex)
+(add-hook 'LaTeX-mode-hook 'cdlatex-mode)
 
 ;; switch tab with Mod+num in tab-bar-mode
 (setq tab-bar-select-tab-modifiers '(control))
