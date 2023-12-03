@@ -103,5 +103,7 @@
 ;; switch tab with Mod+num in tab-bar-mode
 (setq tab-bar-select-tab-modifiers '(control))
 
+(straight-use-package 'yaml-mode)
+
 (provide 'init-package)
 ;;; init-package.el ends here
