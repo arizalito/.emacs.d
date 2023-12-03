@@ -17,5 +17,9 @@
 ;; Dailies
 (keymap-global-set "C-c n j" 'org-roam-dailies-capture-today)
 
+(straight-use-package 'ox-hugo)
+(with-eval-after-load 'ox
+  (require 'ox-hugo))
+
 (provide 'init-org)
 ;;; init-org.el ends here
