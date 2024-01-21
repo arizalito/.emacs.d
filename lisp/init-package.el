@@ -19,6 +19,15 @@
 (leaf vertico
   :init (vertico-mode))
 
+(leaf vertico-directory
+  :after vertico
+  :straight nil
+  :bind (:vertico-map
+	 :package vertico
+              ("RET" . vertico-directory-enter)
+              ("DEL" . vertico-directory-delete-char)
+              ("M-DEL" . vertico-directory-delete-word)))
+
 ;; buffer completion tool
 (leaf corfu
   :custom
