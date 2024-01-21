@@ -107,6 +107,10 @@
 
 ;; latex
 (leaf auctex)
+(leaf cdlatex
+  :hook
+  (LaTeX-mode . cdlatex-mode)
+  (org-mode . org-cdlatex-mode))
 
 (provide 'init-package)
 ;;; init-package.el ends here
