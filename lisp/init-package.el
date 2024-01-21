@@ -5,7 +5,7 @@
 
 ;; display available keybings in popup
 (leaf which-key
-  :diminish
+  :diminish t
   :config
   (which-key-mode))
 
@@ -85,10 +85,11 @@
 (leaf citre)
 
 ;; fold code block
-(add-hook 'prog-mode-hook 'hs-minor-mode)
-(add-hook 'hs-minor-mode-hook
-	  (lambda ()
-	    (diminish 'hs-minor-mode)))
+(leaf hs-minor-mode
+  :straight nil
+  :hook
+  (prog-mode-hook . hs-minor-mode)
+  (hs-minor-mode-hook . (lambda () (diminish 'hs-minor-mode))))
 
 ;; simple templates for emacs
 (leaf tempel
@@ -103,6 +104,8 @@
 
 ;; latex
 (leaf auctex)
+
+;; cdlatex, a fast input methods in LaTeX and org-mode
 (leaf cdlatex
   :hook
   (LaTeX-mode . cdlatex-mode)
