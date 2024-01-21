@@ -28,6 +28,7 @@
 (setq custom-file (locate-user-emacs-file "custom.el"))
 
 (require 'init-package)
+(require 'init-pdf)
 (require 'init-rime)
 (require 'init-org)
 (require 'init-shell)

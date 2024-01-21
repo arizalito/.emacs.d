@@ -84,10 +84,6 @@
 ;; advanced ctags frontend
 (leaf citre)
 
-;; pdf-tools
-(leaf pdf-tools
-  :init (pdf-loader-install))
-
 ;; fold code block
 (add-hook 'prog-mode-hook 'hs-minor-mode)
 (add-hook 'hs-minor-mode-hook
