@@ -44,7 +44,7 @@
 
 ;; eglot, a light lsp client
 (leaf eglot
-  :hook (prog-mode-hook . eglot-ensure))
+  :hook ((prog-mode-hook LaTeX-mode-hook) . eglot-ensure))
 
 ;; git tool
 (leaf magit)
@@ -52,7 +52,7 @@
 ;; yasnippet, a template system for emacs
 (leaf yasnippet
   :hook
-  (prog-mode . yas-minor-mode)
+  (prog-mode-hook . yas-minor-mode)
   (yas-keymap-disable-hook . (lambda ()
 			       (and (frame-live-p corfu--frame)
 				    (frame-visible-p corfu--frame)))))
@@ -68,9 +68,9 @@
   :config
   (setq nov-text-width t)
   :hook
-  (nov-mode . (lambda ()
-		(text-scale-set 1)
-		(visual-line-mode)))
+  (nov-mode-hook . (lambda ()
+		     (text-scale-set 1)
+		     (visual-line-mode)))
   :bind
   (:nov-mode-map
 	("n" . 'next-line)
@@ -117,8 +117,8 @@
 ;; cdlatex, a fast input methods in LaTeX and org-mode
 (leaf cdlatex
   :hook
-  (LaTeX-mode . cdlatex-mode)
-  (org-mode . org-cdlatex-mode))
+  (LaTeX-mode-hook . cdlatex-mode)
+  (org-mode-hook . org-cdlatex-mode))
 
 (provide 'init-package)
 ;;; init-package.el ends here
