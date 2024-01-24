@@ -21,5 +21,9 @@
   ;; Dailies
   ("C-c n j" . #'org-roam-dailies-capture-today))
 
+(use-package ox-hugo
+  :demand t
+  :after ox)
+
 (provide 'init-org)
 ;;; init-org.el ends here
