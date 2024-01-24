@@ -44,7 +44,10 @@
 
 ;; eglot, a light lsp client
 (leaf eglot
-  :hook ((prog-mode-hook LaTeX-mode-hook) . eglot-ensure))
+  :hook (LaTeX-mode-hook . eglot-ensure)
+  :hook (prog-mode-hook . (lambda ()
+			    (unless (eq major-mode 'lisp-interaction-mode)
+			      (eglot-ensure)))))
 
 ;; git tool
 (leaf magit)
