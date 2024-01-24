@@ -17,6 +17,11 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
+;; use-package configuration
+(setq straight-use-package-by-default t)
+(setq use-package-always-defer t)
+(setq use-package-expand-minimally t)
+
 ;; make lisp directory work
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 

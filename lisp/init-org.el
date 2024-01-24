@@ -1,25 +1,25 @@
 ;;; org-mode
 
-(straight-use-package 'org-mode)
-(add-hook 'org-mode-hook 'visual-line-mode)
-(keymap-global-set "C-c a" #'org-agenda)
-(keymap-global-set "C-c c" #'org-capture)
-(if (file-directory-p "~/org/agenda")
-(setq org-agenda-files (directory-files-recursively "~/org/agenda/" "\\.org$")))
+(use-package org
+  :bind
+  ("C-c a" . #'org-agenda)
+  ("C-c c" . #'org-capture)
+  :init
+  (if (file-directory-p "~/org/agenda")
+      (setq org-agenda-files
+	    (directory-files-recursively "~/org/agenda/" "\\.org$"))))
 
-(straight-use-package 'org-roam)
-(setq org-roam-directory "~/org/roam")
-(keymap-global-set "C-c n l" 'org-roam-buffer-toggle)
-(keymap-global-set "C-c n f" 'org-roam-node-find)
-(keymap-global-set "C-c n g" 'org-roam-graph)
-(keymap-global-set "C-c n i" 'org-roam-node-insert)
-(keymap-global-set "C-c n c" 'org-roam-capture)
-;; Dailies
-(keymap-global-set "C-c n j" 'org-roam-dailies-capture-today)
-
-(straight-use-package 'ox-hugo)
-(with-eval-after-load 'ox
-  (require 'ox-hugo))
+(use-package org-roam
+  :init
+  (setq org-roam-directory "~/org/roam")
+  :bind
+  ("C-c n l" . #'org-roam-buffer-toggle)
+  ("C-c n f" . #'org-roam-node-find)
+  ("C-c n g" . #'org-roam-graph)
+  ("C-c n i" . #'org-roam-node-insert)
+  ("C-c n c" . #'org-roam-capture)
+  ;; Dailies
+  ("C-c n j" . #'org-roam-dailies-capture-today))
 
 (provide 'init-org)
 ;;; init-org.el ends here

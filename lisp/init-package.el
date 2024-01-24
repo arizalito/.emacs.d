@@ -1,113 +1,133 @@
 ;;; init-package.el
 
-;; diminish, hide minor-modes in modeline
-(straight-use-package 'diminish)
-(add-hook 'eldoc-mode-hook (lambda () (diminish 'eldoc-mode)))
-(diminish 'abbrev-mode)
+;; hide minor-modes in modeline
+(use-package diminish)
 
 ;; display available keybings in popup
-(straight-use-package 'which-key)
-(which-key-mode)
-(diminish 'which-key-mode)
+(use-package which-key
+  :diminish which-key-mode
+  :defer 2
+  :config
+  (which-key-mode))
 
 ;; orderless
-(straight-use-package 'orderless)
-(setq completion-styles '(orderless basic)
-      completion-category-overrides '((file (styles basic partial-completion))))
+(use-package orderless
+  :init
+  (setq completion-styles '(orderless basic)
+	completion-category-overrides '((file (styles partial-completion)))))
 
 ;; vertico, minibuffer completion tool
-(straight-use-package
- '(vertico :includes vertico-directory
-	   :files (:defaults "extensions/vertico-directory.el")))
-(vertico-mode)
-(keymap-set vertico-map "M-DEL" #'vertico-directory-delete-word)
+(use-package vertico
+  :init (vertico-mode))
+
+(use-package vertico-directory
+  :after vertico
+  :straight nil
+  :bind (:map vertico-map
+              ("RET" . vertico-directory-enter)
+              ("DEL" . vertico-directory-delete-char)
+              ("M-DEL" . vertico-directory-delete-word)))
 
 ;; buffer completion tool
-(straight-use-package 'corfu)
-(global-corfu-mode)
-;; Enable auto completion and configure quitting
-(setq corfu-auto t
-      corfu-quit-no-match 'separator) ;; or t
+(use-package corfu
+  :custom
+  (corfu-auto t)
+  :init
+  (global-corfu-mode))
 
 ;; cape, completion at point extensions for corfu
-(straight-use-package 'cape)
-;; Add `completion-at-point-functions', used by `completion-at-point'.
-(add-to-list 'completion-at-point-functions #'cape-dabbrev)
-(add-to-list 'completion-at-point-functions #'cape-file)
+(use-package cape
+  :init
+  ;; Add `completion-at-point-functions', used by `completion-at-point'.
+  (add-to-list 'completion-at-point-functions #'cape-dabbrev)
+  (add-to-list 'completion-at-point-functions #'cape-file))
 
 ;; eglot, a light lsp client
-(straight-use-package 'eglot)
-(add-hook 'prog-mode-hook (lambda ()
-			    (unless (eq major-mode 'lisp-interaction-mode)
-			      (eglot-ensure))))
-(add-hook 'LaTeX-mode-hook 'eglot-ensure)
+(use-package eglot
+  :hook (LaTeX-mode . eglot-ensure)
+  :hook (prog-mode . (lambda ()
+		       (unless (eq major-mode 'lisp-interaction-mode)
+			 (eglot-ensure)))))
 
 ;; git tool
-(straight-use-package 'magit)
+(use-package magit)
 
 ;; yasnippet, a template system for emacs
-(straight-use-package 'yasnippet)
-(add-hook 'prog-mode-hook 'yas-minor-mode)
-(add-hook 'yas-keymap-disable-hook (lambda () (and (frame-live-p corfu--frame) (frame-visible-p corfu--frame))))
+(use-package yasnippet
+  :hook
+  (prog-mode . yas-minor-mode)
+  (yas-keymap-disable . (lambda ()
+			  (and (frame-live-p corfu--frame)
+			       (frame-visible-p corfu--frame)))))
 
 ;; add marginalia to the minibuffer completions
-(straight-use-package 'marginalia)
-(marginalia-mode)
+(use-package marginalia
+  :after vertico
+  :init (marginalia-mode))
 
 ;; epub reader
-(straight-use-package 'nov)
-(add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
-(setq nov-text-width t)
-(add-hook 'nov-mode-hook (lambda ()
-			   (text-scale-set 2)
-			   (visual-line-mode)
-			   (keymap-unset nov-mode-map "n")
-			   (keymap-set nov-mode-map "n" 'next-line)
-			   (keymap-unset nov-mode-map "p")
-			   (keymap-set nov-mode-map "p" 'previous-line)
-			   ))
+(use-package nov
+  :mode ("\\.epub\\'" . nov-mode)
+  :config
+  (setq nov-text-width t)
+  :hook
+  (nov-mode . (lambda ()
+		(text-scale-set 1)
+		(visual-line-mode)))
+  :bind
+  (:map nov-mode-map
+	("n" . 'next-line)
+	("p" . 'previous-line)))
 
 ;; consult
-(straight-use-package 'consult)
-;; M-s bindings (search-map)
-(keymap-global-set "M-g g" 'consult-goto-line)
-(keymap-global-set "M-g M-g" 'consult-goto-line)
-(keymap-global-set "M-s l" 'consult-line)
-(keymap-global-set "C-x b" 'consult-buffer)
+(use-package consult
+  :bind (("M-g g" . 'consult-goto-line)
+	 ("M-g M-g" . 'consult-goto-line)
+	 ("M-s l" . 'consult-line)
+	 ("C-x b" . 'consult-buffer)))
 
 ;; embark
-(straight-use-package 'embark)
-(keymap-global-set "C-." 'embark-act)
-(straight-use-package 'embark-consult)
+(use-package embark
+  :bind ("C-." . 'embark-act))
+
+(use-package embark-consult
+  :after (consult embark))
 
 ;; advanced ctags frontend
-(straight-use-package 'citre)
+(use-package citre)
 
 ;; fold code block
-(add-hook 'prog-mode-hook 'hs-minor-mode)
-(add-hook 'hs-minor-mode-hook
-	  (lambda ()
-	    (diminish 'hs-minor-mode)))
+(use-package hideshow
+  :straight nil
+  :hook
+  (prog-mode . hs-minor-mode)
+  :diminish hs-minor-mode)
+
+(use-package eldoc
+  :straight nil
+  :diminish eldoc-mode)
 
 ;; simple templates for emacs
-(straight-use-package 'tempel)
-(keymap-global-set "M-+" 'tempel-complete)
-(keymap-global-set "M-*" 'tempel-insert)
-(straight-use-package 'tempel-collection)
+(use-package tempel
+  :bind
+  (("M-+" . 'tempel-complete)
+   ("M-*" . 'tempel-insert)))
+(use-package tempel-collection
+  :after tempel)
 
 ;; markdown
-(straight-use-package 'markdown-mode)
+(use-package markdown-mode)
 
 ;; latex
-(straight-use-package 'auctex)
-(straight-use-package 'cdlatex)
-(add-hook 'LaTeX-mode-hook 'cdlatex-mode)
-(add-hook 'org-mode-hook 'cdlatex-mode)
+(use-package auctex)
 
-;; switch tab with Mod+num in tab-bar-mode
-(setq tab-bar-select-tab-modifiers '(control))
+;; cdlatex, a fast input methods in LaTeX and org-mode
+(use-package cdlatex
+  :hook
+  (LaTeX-mode . cdlatex-mode)
+  (org-mode . org-cdlatex-mode))
 
-(straight-use-package 'yaml-mode)
+(use-package yaml-mode)
 
 (provide 'init-package)
 ;;; init-package.el ends here
