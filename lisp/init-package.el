@@ -23,10 +23,10 @@
 (use-package vertico-directory
   :after vertico
   :straight nil
-  :bind (:map vertico-map
-              ("RET" . vertico-directory-enter)
-              ("DEL" . vertico-directory-delete-char)
-              ("M-DEL" . vertico-directory-delete-word)))
+  :bind ( :map vertico-map
+	  ("RET" . vertico-directory-enter)
+          ("DEL" . vertico-directory-delete-char)
+          ("M-DEL" . vertico-directory-delete-word)))
 
 ;; buffer completion tool
 (use-package corfu
@@ -74,10 +74,9 @@
   (nov-mode . (lambda ()
 		(text-scale-set 1)
 		(visual-line-mode)))
-  :bind
-  (:map nov-mode-map
-	("n" . 'next-line)
-	("p" . 'previous-line)))
+  :bind ( :map nov-mode-map
+	  ("n" . 'next-line)
+	  ("p" . 'previous-line)))
 
 ;; consult
 (use-package consult
