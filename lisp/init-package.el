@@ -37,7 +37,9 @@
 
 ;; eglot, a light lsp client
 (straight-use-package 'eglot)
-(add-hook 'prog-mode-hook 'eglot-ensure)
+(add-hook 'prog-mode-hook (lambda ()
+			    (unless (eq major-mode 'lisp-interaction-mode)
+			      (eglot-ensure))))
 (add-hook 'LaTeX-mode-hook 'eglot-ensure)
 
 ;; git tool
