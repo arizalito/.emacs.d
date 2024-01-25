@@ -106,6 +106,11 @@
   :straight nil
   :diminish eldoc-mode)
 
+(use-package tab-bar
+  :straight nil
+  :config
+  (setq tab-bar-select-tab-modifiers '(control)))
+
 ;; simple templates for emacs
 (use-package tempel
   :bind
