@@ -20,5 +20,9 @@
   ;; Dailies
   ("C-c n j" . #'org-roam-dailies-capture-today))
 
+(leaf ox-hugo
+  :require t
+  :after ox)
+
 (provide 'init-org)
 ;;; init-org.el ends here

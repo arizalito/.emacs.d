@@ -103,6 +103,14 @@
   (prog-mode-hook . hs-minor-mode)
   (hs-minor-mode-hook . (lambda () (diminish 'hs-minor-mode))))
 
+(leaf eldoc
+  :straight nil
+  :diminish t)
+
+(leaf tab-bar
+  :straight nil
+  :config (setq tab-bar-select-tab-modifiers '(control)))
+
 ;; simple templates for emacs
 (leaf tempel
   :bind
