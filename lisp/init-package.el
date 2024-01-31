@@ -133,5 +133,9 @@
 
 (use-package yaml-mode)
 
+(use-package delsel
+  :straight nil
+  :hook (after-init . delete-selection-mode))
+
 (provide 'init-package)
 ;;; init-package.el ends here
