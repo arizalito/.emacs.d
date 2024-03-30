@@ -19,6 +19,7 @@
 
 (straight-use-package 'leaf)
 (straight-use-package 'leaf-keywords)
+(setq leaf-keywords-packages-list nil)
 (leaf-keywords-init)
 (setq leaf-defaults '(:straight t))
 
