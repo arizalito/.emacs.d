@@ -30,7 +30,7 @@
 
 ;; buffer completion tool
 (leaf corfu
-  :custom
+  :setq
   (corfu-auto . t)
   :init
   (global-corfu-mode))
