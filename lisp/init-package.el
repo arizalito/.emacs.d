@@ -25,7 +25,6 @@
   :bind (:vertico-map
 	 :package vertico
               ("RET" . vertico-directory-enter)
-              ("DEL" . vertico-directory-delete-char)
               ("M-DEL" . vertico-directory-delete-word)))
 
 ;; buffer completion tool
