@@ -5,8 +5,9 @@
   ("C-c a" . #'org-agenda)
   ("C-c c" . #'org-capture)
   :init
-  (setq org-agenda-files
-	(directory-files-recursively "~/org/agenda/" "\\.org$")))
+  (if (file-directory-p "~/org/agenda")
+      (setq org-agenda-files
+	    (directory-files-recursively "~/org/agenda/" "\\.org$"))))
 
 (leaf org-roam
   :init
