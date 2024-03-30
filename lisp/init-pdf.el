@@ -6,6 +6,7 @@
 
 (leaf saveplace-pdf-view
   :after pdf-tools
+  :require t
   :hook (pdf-view-mode-hook . save-place-mode))
 
 (provide 'init-pdf)
