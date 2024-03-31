@@ -2,7 +2,12 @@
 
 ;; pdf-tools
 (leaf pdf-tools
-  :init (pdf-loader-install))
+  :straight `(pdf-tools
+	      :host github
+	      :repo "aikrahguzar/pdf-tools")
+  :init (pdf-loader-install)
+  :hook
+  (pdf-view-mode-hook .  pdf-view-roll-minor-mode))
 
 (leaf saveplace-pdf-view
   :after pdf-tools
