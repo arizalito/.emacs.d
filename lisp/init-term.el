@@ -16,5 +16,5 @@
 
 (leaf multi-vterm)
 
-(provide 'init-shell)
+(provide 'init-term)
 ;;; init-shell.el ends here

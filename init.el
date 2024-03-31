@@ -32,7 +32,7 @@
 (require 'init-pdf)
 (require 'init-rime)
 (require 'init-org)
-(require 'init-shell)
+(require 'init-term)
 
 ;; put 3rd party code to site-lisp
 (add-to-list 'load-path (expand-file-name "site-lisp" user-emacs-directory))
