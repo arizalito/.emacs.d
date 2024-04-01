@@ -16,5 +16,13 @@
 
 (leaf multi-vterm)
 
+(leaf eat
+  :straight
+  '(eat :type git
+	:host codeberg
+	:repo "akib/emacs-eat")
+  :setq
+  (eat-term-name . "xterm-256color"))
+
 (provide 'init-term)
 ;;; init-shell.el ends here
