@@ -1,6 +1,6 @@
 ;;; org-mode
 
-(leaf org-mode
+(leaf org
   :bind
   ("C-c a" . #'org-agenda)
   ("C-c c" . #'org-capture)
