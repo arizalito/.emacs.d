@@ -130,5 +130,14 @@
   (LaTeX-mode-hook . cdlatex-mode)
   (org-mode-hook . org-cdlatex-mode))
 
+(leaf yaml-mode)
+
+;; delete the selected region when yanking
+(leaf delsel
+  :straight nil
+  :hook (after-init-hook . delete-selection-mode))
+
+(leaf haskell-mode)
+
 (provide 'init-package)
 ;;; init-package.el ends here
