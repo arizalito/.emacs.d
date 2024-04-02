@@ -53,6 +53,7 @@
 
 ;; yasnippet, a template system for emacs
 (leaf yasnippet
+  :diminish yas-minor-mode
   :hook
   (prog-mode-hook . yas-minor-mode)
   (yas-keymap-disable-hook . (lambda ()
