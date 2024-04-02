@@ -1,13 +1,7 @@
 ;;; init-shell.el
 
 ;; vterm, best terminal emulator in emacs
-(leaf vterm
-  :hook
-  (vterm-mode-hook .
-		   (lambda ()
-		     (set-face-attribute 'vterm-color-black nil
-					 :foreground "#000000"
-					 :background "#555555"))))
+(leaf vterm)
 
 (leaf vterm-toggle
   :bind ("C-`" . 'vterm-toggle)
@@ -16,6 +10,7 @@
 
 (leaf multi-vterm)
 
+;; emulate a terminal, written by elisp
 (leaf eat
   :straight
   '(eat :type git
