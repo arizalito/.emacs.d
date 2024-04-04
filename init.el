@@ -39,6 +39,7 @@
 (add-to-list 'load-path (expand-file-name "site-lisp" user-emacs-directory))
 (mapc (lambda (name)
         (require (intern (file-name-sans-extension name))))
-      (directory-files (expand-file-name "site-lisp" user-emacs-directory) nil "\\.el$"))
+      (directory-files
+       (expand-file-name "site-lisp" user-emacs-directory) nil "\\.el$"))
 
 ;;; init.el ends here
