@@ -32,6 +32,7 @@
 (require 'init-pdf)
 (require 'init-rime)
 (require 'init-org)
+(require 'init-latex)
 (require 'init-term)
 
 ;; put 3rd party code to site-lisp

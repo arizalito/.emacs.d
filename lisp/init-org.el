@@ -4,6 +4,8 @@
   :bind
   ("C-c a" . #'org-agenda)
   ("C-c c" . #'org-capture)
+  (:org-mode-map
+   ("$" . math-delimiters-insert))
   :init
   (if (file-directory-p "~/org/agenda")
       (setq org-agenda-files

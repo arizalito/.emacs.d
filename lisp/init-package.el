@@ -133,15 +133,6 @@
 ;; markdown
 (leaf markdown-mode)
 
-;; latex
-(leaf auctex)
-
-;; cdlatex, a fast input methods in LaTeX and org-mode
-(leaf cdlatex
-  :hook
-  (LaTeX-mode-hook . cdlatex-mode)
-  (org-mode-hook . org-cdlatex-mode))
-
 (leaf yaml-mode)
 
 ;; delete the selected region when yanking
