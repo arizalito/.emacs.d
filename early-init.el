@@ -38,9 +38,5 @@
 (global-unset-key (kbd "C-z"))
 (global-unset-key (kbd "C-x C-z"))
 
-;; set defalut font globally
-(add-to-list 'default-frame-alist
-	     '(font . "Source Code Pro-13"))
-
 (provide 'early-init)
 ;;; early-init.el ends here
