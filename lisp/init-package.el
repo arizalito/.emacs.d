@@ -102,7 +102,8 @@
   :bind ("C-." . 'embark-act))
 
 (leaf embark-consult
-  :after embark)
+  :after embark
+  :require t)
 
 ;; advanced ctags frontend
 (leaf citre)

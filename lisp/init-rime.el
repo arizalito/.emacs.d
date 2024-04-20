@@ -2,15 +2,16 @@
 
 ;; rime in emacs
 (leaf rime
-  :config
-  (setq default-input-method "rime"
-	rime-title "R"
-	rime-translate-keybindings '("C-`")
-	rime-show-candidate 'posframe)
-  ;; kill rime before exiting emacs to avoid crash
+  :setq ((default-input-method . "rime")
+	 (rime-title . "R")
+	 (rime-translate-keybindings quote
+				     ("C-`"))
+	 (rime-show-candidate quote posframe))
+  :defer-config
   (add-hook 'kill-emacs-hook
-	    (lambda ()
-	      (if (fboundp 'rime-lib-finalize) (rime-lib-finalize)))))
+	    (lambda nil
+	      (if (fboundp 'rime-lib-finalize)
+		  (rime-lib-finalize)))))
 
 (provide 'init-rime)
 ;;; init-rime.el ends here
