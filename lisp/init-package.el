@@ -67,17 +67,17 @@
 
 ;; epub reader
 (leaf nov
-  :mode ("\\.epub\\'" . nov-mode)
+  :mode ("\\.epub\\'")
   :config
   (setq nov-text-width t)
-  :hook
-  (nov-mode-hook . (lambda ()
-		     (text-scale-set 1)
-		     (visual-line-mode)))
+  (add-hook 'nov-mode-hook
+	    #'(lambda nil
+		(text-scale-set 1)
+		(visual-line-mode)))
   :bind
   (:nov-mode-map
-	("n" . 'next-line)
-	("p" . 'previous-line)))
+   ("n" . next-line)
+   ("p" . previous-line)))
 
 ;; consult
 (leaf consult
@@ -111,9 +111,8 @@
 ;; fold code block
 (leaf hs-minor-mode
   :straight nil
-  :hook
-  (prog-mode-hook . hs-minor-mode)
-  (hs-minor-mode-hook . (lambda () (diminish 'hs-minor-mode))))
+  :hook ((prog-mode-hook . hs-minor-mode))
+  :diminish t)
 
 (leaf eldoc
   :straight nil
@@ -121,15 +120,15 @@
 
 (leaf tab-bar
   :straight nil
-  :config (setq tab-bar-select-tab-modifiers '(control)))
+  :defer-config (setq tab-bar-select-tab-modifiers '(control)))
 
 ;; simple templates for emacs
 (leaf tempel
   :bind
   (("M-+" . 'tempel-complete)
    ("M-*" . 'tempel-insert)))
-(leaf tempel-collection
-  :after tempel)
+
+(leaf tempel-collection)
 
 ;; markdown
 (leaf markdown-mode)
