@@ -21,7 +21,9 @@
   ("C-c n i" . #'org-roam-node-insert)
   ("C-c n c" . #'org-roam-capture)
   ;; Dailies
-  ("C-c n j" . #'org-roam-dailies-capture-today))
+  ("C-c n j" . #'org-roam-dailies-capture-today)
+  :config
+  (org-roam-db-autosync-mode))
 
 (leaf ox-hugo
   :require t
