@@ -27,7 +27,9 @@
 
 (leaf tab-bar
   :straight nil
-  :defer-config (setq tab-bar-select-tab-modifiers '(control)))
+  :defer-config
+  (setq tab-bar-select-tab-modifiers '(control))
+  (setq tab-bar-show 1))
 
 ;; delete the selected region when yanking
 (leaf delsel
