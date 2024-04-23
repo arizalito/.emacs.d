@@ -1,7 +1,9 @@
 ;;; init-latex.el
 
 ;; latex
-(leaf auctex)
+(leaf auctex
+  :hook
+  (LaTeX-mode-hook . TeX-fold-mode))
 
 ;; cdlatex, a fast input methods in LaTeX and org-mode
 (leaf cdlatex
@@ -17,5 +19,8 @@
    (:cdlatex-mode-map
     ("$" . nil))))
 
+(leaf xenops
+  :hook
+  (LaTeX-mode-hook))
 (provide 'init-latex)
 ;;; init-latex.el ends here
