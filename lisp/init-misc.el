@@ -15,4 +15,24 @@
   :bind
   ("M-W" . #'kill-ring-save-with-join-line))
 
+;; fold code block
+(leaf hs-minor-mode
+  :straight nil
+  :hook ((prog-mode-hook . hs-minor-mode))
+  :diminish t)
+
+(leaf eldoc
+  :straight nil
+  :diminish t)
+
+(leaf tab-bar
+  :straight nil
+  :defer-config (setq tab-bar-select-tab-modifiers '(control)))
+
+;; delete the selected region when yanking
+(leaf delsel
+  :straight nil
+  :hook (after-init-hook . delete-selection-mode))
+
 (provide 'init-misc)
+;;; init-misc.el ends here
