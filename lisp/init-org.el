@@ -1,4 +1,4 @@
-;;; org-mode
+;;; init-org.el -*- lexical-binding: t -*-
 
 (leaf org
   :bind

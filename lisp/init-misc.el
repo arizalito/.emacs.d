@@ -1,3 +1,4 @@
+;;; init-misc.el -*- lexical-binding: t -*-
 (leaf emacs
   :straight nil
   :init

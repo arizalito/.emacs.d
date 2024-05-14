@@ -1,4 +1,4 @@
-;;; init-package.el
+;;; init-package.el -*- lexical-binding: t -*-
 
 ;; hide minor-modes in modeline
 (leaf diminish)

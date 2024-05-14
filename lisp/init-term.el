@@ -1,4 +1,4 @@
-;;; init-shell.el
+;;; init-shell.el -*- lexical-binding: t -*-
 
 ;; vterm, best terminal emulator in emacs
 (leaf vterm)

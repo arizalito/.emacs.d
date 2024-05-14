@@ -1,4 +1,4 @@
-;;; init-latex.el
+;;; init-latex.el -*- lexical-binding: t -*-
 
 ;; latex
 (leaf auctex

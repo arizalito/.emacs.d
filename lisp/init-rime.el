@@ -1,4 +1,4 @@
-;;; init-rime.el
+;;; init-rime.el -*- lexical-binding: t -*-
 
 ;; rime in emacs
 (leaf rime

@@ -1,4 +1,4 @@
-;;; init-pdf.el
+;;; init-pdf.el -*- lexical-binding: t -*-
 
 ;; pdf-tools
 (leaf pdf-tools

@@ -1,4 +1,4 @@
-;;; early-init.el
+;;; early-init.el -*- lexical-binding: t -*-
 
 ;; optimize gc
 (setq gc-cons-threshold most-positive-fixnum)
